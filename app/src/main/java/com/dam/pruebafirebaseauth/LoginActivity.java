@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +20,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "Account deleted!";
+
     EditText et_mail, et_password;
-    Button btn_login, btn_register;
+    Button btn_login, btn_register, btn_delete;
 
     private FirebaseAuth fba;
     private FirebaseUser user;
@@ -35,20 +38,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
+        btn_delete = findViewById(R.id.btn_delete);
 
         btn_register.setOnClickListener(this);
         btn_login.setOnClickListener(this);
+        btn_delete.setOnClickListener(this);
 
         fba = FirebaseAuth.getInstance();
 
         //Comprobamos si hay usuario conectado
         user = fba.getCurrentUser();
         if (user == null){
-            btn_login.setEnabled(false);
             btn_register.setEnabled(true);
+            btn_delete.setVisibility(View.GONE);
         } else {
+            et_mail.setText(user.getEmail());
             btn_register.setEnabled(false);
-            btn_login.setEnabled(true);
+            btn_delete.setVisibility(View.VISIBLE);
         }
     }
 
@@ -59,7 +65,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             login();
         } else if (view.getId() == R.id.btn_register){
             register();
+        } else if (view.getId() == R.id.btn_delete){
+            delete();
         }
+    }
+
+    private void delete() {
+        fba.getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) Log.d(TAG, "User deleted");
+            }
+        });
+
+        btn_register.setEnabled(true);
+        btn_delete.setVisibility(View.GONE);
+        et_mail.setText("");
+        et_password.setText("");
     }
 
     private void register() {

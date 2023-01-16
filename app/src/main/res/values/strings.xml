@@ -10,4 +10,6 @@
     <string name="msj_registrado">Usuario registrado correctamente</string>
     <string name="msj_no_registrado">Error El usuario no se ha podido registrar correctamente</string>
     <string name="pwd_incorrecta">La contraseña no es correcta</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_delete">Delete user</string>
 </resources>
