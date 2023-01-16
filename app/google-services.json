@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485728784498",
+    "project_id": "pruebafirebaseauth-c9ed1",
+    "storage_bucket": "pruebafirebaseauth-c9ed1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485728784498:android:0d49eba3582f5afa8272eb",
+        "android_client_info": {
+          "package_name": "com.dam.pruebafirebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485728784498-ibhi7v0jjtbltvbi8pvoffeldrlq1fj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlYsZ5uJpC82IwioOOJ2wKsLNALJTF87o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485728784498-ibhi7v0jjtbltvbi8pvoffeldrlq1fj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PruebaFirebaseAuth</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="et_mail">Email</string>
+    <string name="et_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="no_datos">Ambos campos son obligatorios</string>
+    <string name="pwd_corta">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="msj_registrado">Usuario registrado correctamente</string>
+    <string name="msj_no_registrado">Error El usuario no se ha podido registrar correctamente</string>
+    <string name="pwd_incorrecta">La contraseña no es correcta</string>
+</resources>
