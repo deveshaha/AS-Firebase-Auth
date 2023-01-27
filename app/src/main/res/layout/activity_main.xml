@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -41,7 +40,70 @@
         android:layout_marginTop="@dimen/margen"
         android:text="@string/btn_push"
         android:layout_height="wrap_content">
-
     </Button>
+
+    <Button
+        android:id="@+id/btnUpdateChildern"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:text="@string/btn_updateChildren"
+        app:layout_constraintTop_toBottomOf="@id/btnSetValue"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/btnSetValueObj"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:text="@string/btn_set_value_obj"
+        app:layout_constraintTop_toBottomOf="@id/btnUpdateChildern"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/btnUpdateChildrenObj"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:text="@string/btn_updateChildrenObj"
+        app:layout_constraintTop_toBottomOf="@id/btnSetValueObj"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/btnModifAtr"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:text="@string/btn_modificarAtr"
+        app:layout_constraintTop_toBottomOf="@id/btnUpdateChildrenObj"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <LinearLayout
+        android:id="@+id/llBorrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnModifAtr">
+
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_remove"
+            android:layout_weight="1">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSetValueNull"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_set_value_null"
+            android:layout_weight="1">
+
+        </Button>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
