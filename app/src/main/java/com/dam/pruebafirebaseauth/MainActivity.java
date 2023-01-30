@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference dbref;
     TextView tv_user;
     Button btn_logout, btnSetValue, btnPush, btnUpdateChildren, btnSetValueObj,
-            btnUpdateChildrenObj, btnModifAtr, btnRemove, btnSetValueNull;
+            btnUpdateChildrenObj, btnModifAtr, btnRemove, btnSetValueNull, btnLeerValue, btnLeerObj;
     int cont;
 
     @Override
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnModifAtr = findViewById(R.id.btnModifAtr);
         btnRemove = findViewById(R.id.btnRemove);
         btnSetValueNull = findViewById(R.id.btnSetValueNull);
+        btnLeerValue = findViewById(R.id.btnLeerValue);
+        btnLeerObj = findViewById(R.id.btnLeerObj);
 
         fbd = FirebaseDatabase.getInstance();
         dbref = fbd.getReference();
@@ -51,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fba = FirebaseAuth.getInstance();
         user = fba.getCurrentUser();
-        tv_user.setText(user.getEmail());
+        if (user != null) {
+            tv_user.setText(user.getEmail());
+        }
 
         btn_logout.setOnClickListener(this);
         btnSetValue.setOnClickListener(this);
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnModifAtr.setOnClickListener(this);
         btnRemove.setOnClickListener(this);
         btnSetValueNull.setOnClickListener(this);
+        btnLeerValue.setOnClickListener(this);
+        btnLeerObj.setOnClickListener(this);
     }
 
     private void logout() {
@@ -94,7 +100,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             probarRemove();
         } else if (view.getId() == R.id.btnSetValueNull){
             probarSetValueNull();
+        } else if (view.getId() == R.id.btnLeerValue){
+            probarLeerValue();
+        } else if (view.getId() == R.id.btnLeerObj){
+            probarLeerObj();
         }
+    }
+
+    private void probarLeerObj() {
+        Intent intent  = new Intent(this, LeerObjActivity.class);
+        startActivity(intent);
+    }
+
+    private void probarLeerValue() {
+        Intent intent  = new Intent(this, ActivityLeerValue.class);
+        startActivity(intent);
     }
 
     private void probarSetValueNull() {
@@ -131,6 +151,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         estructura.put("animal1", "Perro");
         estructura.put("animal2", "Gato");
         estructura.put("animal3", "Raton");
+        estructura.put("animal4", "Conejo");
+        estructura.put("animal5", "Tortuga");
+        estructura.put("animal6", "Pez");
+        estructura.put("animal7", "Araña");
+        estructura.put("animal8", "Mosca");
+        estructura.put("animal9", "Mosquito");
 
         dbref.child("Animales").updateChildren(estructura);
     }

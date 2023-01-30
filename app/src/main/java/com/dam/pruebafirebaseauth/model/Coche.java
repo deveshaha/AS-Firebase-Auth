@@ -7,6 +7,9 @@ public class Coche implements Serializable {
     private String marca;
     private String modelo;
 
+    public Coche() {
+    }
+
     public Coche(String matricula, String marca, String modelo) {
         this.matricula = matricula;
         this.marca = marca;
@@ -27,10 +30,6 @@ public class Coche implements Serializable {
 
     @Override
     public String toString() {
-        return "Coche{" +
-                "matricula='" + matricula + '\'' +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                '}';
+        return matricula + " " + marca + " " + modelo;
     }
 }
