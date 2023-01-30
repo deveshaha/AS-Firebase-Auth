@@ -24,30 +24,48 @@
 
     </Button>
 
-    <Button
-        android:id="@+id/btnSetValue"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/llInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/btn_logout"
-        android:layout_marginTop="@dimen/margen"
-        android:text="@string/btn_set_value"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
-    </Button>
+        <Button
+            android:id="@+id/btnSetValue"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btn_logout"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/btn_set_value"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </Button>
 
-    <Button
-        android:id="@+id/btnPush"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/margen"
-        android:text="@string/btn_push"
-        android:layout_height="wrap_content">
-    </Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   ">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/btnPush"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/btn_push"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </Button>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnUpdateChildern"
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/margen"
+        app:layout_constraintTop_toBottomOf="@id/llInsert"
         android:text="@string/btn_updateChildren"
-        app:layout_constraintTop_toBottomOf="@id/btnSetValue"
         android:layout_height="wrap_content">
     </Button>
 
@@ -112,6 +130,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llLeer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -138,6 +157,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/btnLeerObj">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLeer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/llLeer">
+
+        <Button
+            android:id="@+id/btnLeerChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_leer_child">
+
         </Button>
 
     </LinearLayout>

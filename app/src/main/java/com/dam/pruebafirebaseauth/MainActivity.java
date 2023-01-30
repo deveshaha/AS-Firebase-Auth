@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference dbref;
     TextView tv_user;
     Button btn_logout, btnSetValue, btnPush, btnUpdateChildren, btnSetValueObj,
-            btnUpdateChildrenObj, btnModifAtr, btnRemove, btnSetValueNull, btnLeerValue, btnLeerObj;
+            btnUpdateChildrenObj, btnModifAtr, btnRemove, btnSetValueNull,
+            btnLeerValue, btnLeerObj, btnLeerChild;
     int cont;
 
     @Override
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSetValueNull = findViewById(R.id.btnSetValueNull);
         btnLeerValue = findViewById(R.id.btnLeerValue);
         btnLeerObj = findViewById(R.id.btnLeerObj);
+        btnLeerChild = findViewById(R.id.btnLeerChild);
 
         fbd = FirebaseDatabase.getInstance();
         dbref = fbd.getReference();
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSetValueNull.setOnClickListener(this);
         btnLeerValue.setOnClickListener(this);
         btnLeerObj.setOnClickListener(this);
+        btnLeerChild.setOnClickListener(this);
     }
 
     private void logout() {
@@ -104,7 +107,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             probarLeerValue();
         } else if (view.getId() == R.id.btnLeerObj){
             probarLeerObj();
+        } else if (view.getId() == R.id.btnLeerChild){
+            probarLeerChild();
         }
+    }
+
+    private void probarLeerChild() {
+        Intent intent  = new Intent(this, LeerChildActivity.class);
+        startActivity(intent);
     }
 
     private void probarLeerObj() {

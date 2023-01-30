@@ -22,4 +22,5 @@
     <string name="btn_set_value_null">Set value null</string>
     <string name="btnLeerValue">Leer Value</string>
     <string name="btnLeerObj">Leer Objeto</string>
+    <string name="btn_leer_child">Leer Child</string>
 </resources>
